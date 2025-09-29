@@ -53,8 +53,8 @@ def print_flags_ipv4(data):
 
     print(f"  {'Flags & Frag Offset:':<25} {data:<20} | 0b{binary_flags}")
     for i in range(3):
-        print(f"    {flag_fields[i]:<25} {binary_flags[i]}")
-    print(f"    {'Fragment Offset:':<25} {hex(int(binary_flags[3:], 2))} | {int(binary_flags[3:], 2)}")
+        print(f"    {flag_fields[i]:<15} {binary_flags[i]}")
+    print(f"    {'Fragment Offset:':<15} {hex(int(binary_flags[3:], 2))} | {int(binary_flags[3:], 2)}")
 
 def print_flags_tcp(data):
     binary_flags = f"{int(data, 16):0{12}b}"
@@ -65,5 +65,5 @@ def print_flags_tcp(data):
     print(f"  {'Reserved:':<25} 0b{res:<18} | {int(res, 2)}")
     print(f"  {'Flags:':<25} 0b{flags:<18} | {int(flags, 2)}")
     for i in range(9):
-        print(f"    {flag_fields[i]:<30} {flags[i]}")
+        print(f"    {flag_fields[i]:<15} {flags[i]}")
 
